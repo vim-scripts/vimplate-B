@@ -1,0 +1,53 @@
+[% classname=input("Class name: ") -%]
+#ifndef [% uc(classname) %]_HPP
+#define [% uc(classname) %]_HPP
+
+/**
+ * @brief [% classname %] ... short description ...
+ *
+ * ... description ...
+ */
+
+class [% classname %]
+{
+  public:
+
+    /** 
+     * Default constructor
+     */
+    [% classname %]();
+
+    /** 
+     * Assignment operator
+     * @param other reference on object to copy
+     * @return reference on initialisated object
+     */
+    [% classname %]& operator=(const [% classname %]& other);
+
+    /** 
+     * Copy constructor
+     * @param other reference on object to copy
+     */
+    [% classname %](const [% classname %]& other);
+
+    /** 
+     * Destructor
+     */
+    virtual ~[% classname %]();
+
+  private:
+
+    /** 
+     * Base initialisation should be called
+     * at beginning of each constructor
+     */
+    void init();
+
+    /** 
+     * Method to copy each member (deep copy)
+     * @param other reference on object to copy
+     */
+    void init(const [% classname %]& other);
+};
+
+#endif /* #ifndef [% uc(classname) %]_HPP */

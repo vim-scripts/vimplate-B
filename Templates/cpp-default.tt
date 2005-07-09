@@ -1,0 +1,34 @@
+[% classname=input("Class name: ") -%]
+#include "[% classname %].hpp"
+
+[% classname %]::[% classname %]()
+{
+  init();
+}
+
+[% classname %]& [% classname %]::operator=(const [% classname %]& other)
+{
+  init(other);
+  return *this;
+}
+
+[% classname %]::[% classname %](const [% classname %]& other)
+{
+  init();
+  *this=other;
+}
+
+[% classname %]::~[% classname %]()
+{
+  // Hier sauber Aufraeumen.
+}
+
+void [% classname %]::init(void)
+{
+  // Hier Basisinitialisation aller Member.
+}
+
+void [% classname %]::init(const [% classname %]& other)
+{
+  // Hier "deep copy" Member zu Member bei Pointer.
+}
